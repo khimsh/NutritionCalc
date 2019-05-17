@@ -1,76 +1,86 @@
-const form = document.querySelector('#form');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#form');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+    form.addEventListener('submit', e => {
+        e.preventDefault();
 
-    let values = formValues();
-    let [weight, height, weightLoss] = values;
+        let values = formValues();
+        let [weight, height, weightLoss] = values;
 
-    let bmi = calculateBMI(weight, height);
-    let gatheredPoints = pointCalculator(bmi, weightLoss);
+        let bmi = calculateBMI(weight, height);
+        let gatheredPoints = pointCalculator(bmi, weightLoss);
 
-    console.log(`BMI: ${bmi}`);
-    console.log(`weightloss: ${weightLoss}`);
-    console.log(`Gathered Points: ${gatheredPoints}`);
+        console.log(`BMI: ${bmi}`);
+        console.log(`weightloss: ${weightLoss}`);
+        console.log(`Gathered Points: ${gatheredPoints}`);
 
-    form.reset();
-})
+        window.location = "results.html"
 
-// Grab values from the form
-function formValues() {
-    let weight = form.weight.value;
-    let height = form.height.value / 100;
+        form.reset();
+    })
 
-    let weightLoss = parseInt(form.weightLoss.value);
+    // Grab values from the form
+    function formValues() {
+        let weight = form.weight.value;
+        let height = form.height.value / 100;
 
-    return [weight, height, weightLoss];
-}
+        let weightLoss = parseInt(form.weightLoss.value);
 
-// Function to calculate BMI of the patient
-function calculateBMI(weight, height) {
-    let bmi = weight / Math.pow(height, 2);
-    bmi = bmi.toFixed(2)
-    return bmi;
-}
-
-// Function to calculate total amount of points gathered by the patient
-function pointCalculator(bmi, weightLoss) {
-
-    let points = 0;
-
-    // Points gathered from BMI
-    if (bmi > 20) {
-        points += 0;
-    } else if (bmi < 18.5) {
-        points += 2;
-    } else if (bmi < 20 && bmi > 18.5) {
-        points += 1;
+        return [weight, height, weightLoss];
     }
 
-    switch (weightLoss) {
-        case 0:
+    // Function to calculate BMI of the patient
+    function calculateBMI(weight, height) {
+        let bmi = weight / Math.pow(height, 2);
+        bmi = bmi.toFixed(2)
+        return bmi;
+    }
+
+    // Function to calculate total amount of points gathered by the patient
+    function pointCalculator(bmi, weightLoss) {
+
+        let points = 0;
+
+        // Points gathered from BMI
+        if (bmi > 20) {
             points += 0;
-            break;
-        case 1:
-            points += 0;
-            break;
-        case 2:
-            points += 1;
-            break;
-        case 3:
+        } else if (bmi < 18.5) {
             points += 2;
-            break;
-        default:
-            console.log('Something went wrong with weightLoss');
-            console.log(weightLoss);
-    }
+        } else if (bmi < 20 && bmi > 18.5) {
+            points += 1;
+        }
 
-    // Points gathered from critical condition
-    if (form.critical.checked) {
-        points += 2;
-    }
+        switch (weightLoss) {
+            case 0:
+                points += 0;
+                break;
+            case 1:
+                points += 0;
+                break;
+            case 2:
+                points += 1;
+                break;
+            case 3:
+                points += 2;
+                break;
+            default:
+                console.log('Something went wrong with weightLoss');
+                console.log(weightLoss);
+        }
 
-    // TODO: points gathered from additional diseases/conditions
+        // Points gathered from critical condition
+        if (form.critical.checked) {
+            points += 2;
+        }
 
-    return points;
-};
+        // TODO: points gathered from additional diseases/conditions
+
+        return points;
+    };
+});
+
+// Calculate Calories
+// switch(points) {
+//     case 0:
+
+// }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NutriCalc</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        html {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .helper-text strong {
+            font-weight: 700;
+        }
+
+        .kkal {
+            font-size: 3rem;
+        }
+
+        .kkal span {
+            font-size: 1.5rem;
+        }
+
+        .recomendation {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="navbar-fixed">
+            <nav class="teal lighten-2">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="index.html" class="brand-logo">NutriCalc</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+                                class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="about.html">პროექტის შესახებ</a></li>
+                            <li><a href="terms.html">გამოყენების პირობები</a></li>
+                            <li><a href="contact.html">კონტაქტი</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="about.html">პროექტის შესახებ</a></li>
+            <li><a href="terms.html">გამოყენების პირობები</a></li>
+            <li><a href="contact.html">კონტაქტი</a></li>
+        </ul>
+    </header>
+
+    <main>
+
+        <div class="container">
+
+            <div class="row">
+                <h5>დღიური კალორია</h5>
+
+                <p class="center kkal">1200<span>კკალ</span></p>
+            </div>
+
+            <div class="row">
+                <h5>რეკომენდაცია</h5>
+
+                <p class="recomendation">შეაფასეთ ყოველ კვირას რუტინულად.</p>
+            </div>
+
+
+            <div class="row">
+                <h5>პაციენტის მონაცემები</h5>
+
+                <table class="striped">
+                    <tbody>
+                        <tr>
+                            <th>პაციენტის ქულა</th>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>წონა</th>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>სიმაღლე</th>
+                            <td>170სმ</td>
+                        </tr>
+                        <tr>
+                            <th>ასაკი</th>
+                            <td>56</td>
+                        </tr>
+                        <tr>
+                            <th>სქესი</th>
+                            <td>მამაკაცი</td>
+                        </tr>
+                        <tr>
+                            <th>წონის დანაკარგი</th>
+                            <td>არ არის</td>
+                        </tr>
+                        <tr>
+                            <th>კრიტიკული მდგომარეობა</th>
+                            <td>არ არის</td>
+                        </tr>
+                        <tr>
+                            <th>თანმხლები დაავადებები</th>
+                            <td>არ არის</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="col s5 left-align">
+                    <a href="index.html" class="btn waves-effect waves-light">უკან
+                        <i class="material-icons left">arrow_left</i>
+                    </a>
+                </div>
+                <div class="col s7 right-align">
+                    <button class="btn waves-effect waves-light">ჩამოტვირთე PDF</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elems = document.querySelectorAll('.sidenav');
+            let instances = M.Sidenav.init(elems);
+        });
+    </script>
+
+
+    <script src="calc.js"></script>
+</body>
+
+</html>
