@@ -22,7 +22,6 @@
       font-weight: 700;
     }
   </style>
-
 </head>
 
 <body>
@@ -58,12 +57,12 @@
     <div class="container">
 
       <div class="row">
-        <form class="col s12">
+        <form class="col s12" id="form">
 
-          <section id="patientInfo" class="section">
+          <section id="patient-info" class="section">
             <div class="row">
               <div class="input-field col s12 l6">
-                <input id="weight" type="number" class="validate">
+                <input id="weight" type="number" name="weight" class="validate">
                 <label for="weight" class="black-text">წონა (კგ)</label>
                 <span class="helper-text" data-error="wrong" data-success="right">წონა მიუთითეთ
                   <strong>კილოგრამებში</strong>. მაგ.
@@ -73,11 +72,11 @@
 
             <div class="row">
               <div class="input-field col s12 l6">
-                <input id="height" type="number" class="validate">
-                <label for="height" class="black-text">სიმაღლე (მ)</label>
+                <input id="height" type="number" name="height" class="validate">
+                <label for="height" class="black-text">სიმაღლე (სმ)</label>
                 <span class="helper-text" data-error="wrong" data-success="right">სიმაღლე მიუთითეთ
-                  <strong>მეტრებში</strong>. მაგ.
-                  <strong>1.70</strong></span>
+                  <strong>სანტიმეტრებში</strong>. მაგ.
+                  <strong>170</strong></span>
               </div>
             </div>
 
@@ -85,14 +84,14 @@
 
             <p>
               <label>
-                <input class="with-gap" name="gender" type="radio" checked />
+                <input class="with-gap" name="gender" value="female" type="radio" checked />
                 <span class="black-text">ქალი</span>
               </label>
             </p>
 
             <p>
               <label>
-                <input class="with-gap" name="gender" type="radio" />
+                <input class="with-gap" name="gender" value="male" type="radio" />
                 <span class="black-text">მამაკაცი</span>
               </label>
             </p>
@@ -100,33 +99,33 @@
 
           <div class="divider"></div>
 
-          <section id="weightLoss" class="section">
+          <section id="weight-loss" class="section">
             <p>წონის არაგეგმიური კლება ბოლო 3-5 თვის მანძილზე</p>
 
             <p>
               <label>
-                <input class="with-gap" name="weight-loss" type="radio" checked />
+                <input class="with-gap" name="weightLoss" value="0" type="radio" checked />
                 <span class="black-text">არ არის</span>
               </label>
             </p>
 
             <p>
               <label>
-                <input class="with-gap" name="weight-loss" type="radio" />
+                <input class="with-gap" name="weightLoss" value="1" type="radio" />
                 <span class="black-text">ნაკლებია 5%-ზე</span>
               </label>
             </p>
 
             <p>
               <label>
-                <input class="with-gap" name="weight-loss" type="radio" />
+                <input class="with-gap" name="weightLoss" value="2" type="radio" />
                 <span class="black-text">5 - 10%</span>
               </label>
             </p>
 
             <p>
               <label>
-                <input class="with-gap" name="weight-loss" type="radio" />
+                <input class="with-gap" name="weightLoss" value="3" type="radio" />
                 <span class="black-text">მეტია 10%-ზე</span>
               </label>
             </p>
@@ -135,10 +134,10 @@
 
           <div class="divider"></div>
 
-          <section id="criticalStatus" class="section">
+          <section id="critical-status" class="section">
             <p>
               <label>
-                <input type="checkbox" class="filled-in" />
+                <input type="checkbox" class="filled-in" name="critical" />
                 <span class="black-text">პაციენტი კრიტიკულად მძიმეა, არ მიუღია საკვები ადეკვატურად 5-ზე მეტი დღის
                   განმავლობაში, აქვს
                   დისფაგია.</span>
@@ -156,8 +155,6 @@
 
   </main>
 
-
-
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
@@ -166,6 +163,9 @@
       let instances = M.Sidenav.init(elems);
     });
   </script>
+
+
+  <script src="calc.js"></script>
 </body>
 
 </html>
