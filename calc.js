@@ -1,36 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#form');
 
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
         let values = formValues();
-        let [weight, height, weightLoss] = values;
+        form.reset();
+
+
+        let [weight, height, weightLoss, criticalStatus] = values;
 
         let bmi = calculateBMI(weight, height);
-        let gatheredPoints = pointCalculator(bmi, weightLoss);
+        let totalScore = scoreCalculator(bmi, weightLoss, criticalStatus);
 
         console.log(`BMI: ${bmi}`);
         console.log(`weightloss: ${weightLoss}`);
-        console.log(`Gathered Points: ${gatheredPoints}`);
+        console.log(`Gathered score: ${totalScore}`);
 
-        form.reset();
+        // Calculate Calories
+        if (totalScore <= 1) {
+            console.log('Score is 0 or 1');
+        } else if (totalScore >= 2) {
+            console.log('Score is 2 or more');
+        }
+
     })
 });
-
-// Calculate Calories
-// switch(points) {
-//     case 0:
-
-// }
 
 // Grab values from the form
 function formValues() {
     let weight = form.weight.value;
     let height = form.height.value / 100;
+    let criticalStatus = form.critical.checked;
 
     let weightLoss = parseInt(form.weightLoss.value);
 
-    return [weight, height, weightLoss];
+    return [weight, height, weightLoss, criticalStatus];
 }
 
 // Function to calculate BMI of the patient
@@ -41,43 +46,53 @@ function calculateBMI(weight, height) {
 }
 
 // Function to calculate total amount of points gathered by the patient
-function pointCalculator(bmi, weightLoss) {
+function scoreCalculator(bmi, weightLoss, criticalStatus) {
 
-    let points = 0;
+    let score = 0;
 
     // Points gathered from BMI
     if (bmi > 20) {
-        points += 0;
+        score += 0;
     } else if (bmi < 18.5) {
-        points += 2;
+        score += 2;
     } else if (bmi < 20 && bmi > 18.5) {
-        points += 1;
+        score += 1;
     }
 
     switch (weightLoss) {
         case 0:
-            points += 0;
+            score += 0;
             break;
         case 1:
-            points += 0;
+            score += 0;
             break;
         case 2:
-            points += 1;
+            score += 1;
             break;
         case 3:
-            points += 2;
+            score += 2;
             break;
         default:
             console.log('Something went wrong with weightLoss');
             console.log(weightLoss);
     }
 
-    // Points gathered from critical condition
-    if (form.critical.checked) {
-        points += 2;
+    // score gathered from critical condition
+    if (criticalStatus) {
+        score += 2;
     }
 
-    // TODO: points gathered from additional diseases/conditions
-
-    return points;
+    return score;
 };
+
+function caseOne(weight) {
+    let TEE = 25 * weight;
+    let proteins = TEE / 4;
+    let fats = TEE / 4;
+    let carbs = TEE / 2;
+    return [TEE, proteins, fats, carbs];
+}
+
+function caseTwo(weight) {
+
+}
