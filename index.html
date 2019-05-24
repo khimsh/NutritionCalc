@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NutriCalc</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/arial-geo/css/arial-geo.min.css">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
@@ -15,11 +15,27 @@
 
   <style>
     html {
-      font-family: 'Roboto', sans-serif;
+          font-family: "Arial GEO", sans-serif;
+      }
+
+    button {
+        font-family: inherit;
     }
 
     .helper-text strong {
       font-weight: 700;
+    }
+
+    .kkal {
+            font-size: 3rem;
+    }
+
+    .kkal span {
+        font-size: 1.5rem;
+    }
+
+    .recomendation {
+        font-size: 1rem;
     }
   </style>
 </head>
@@ -56,100 +72,89 @@
 
     <div class="container">
 
-      <div class="row">
-        <form class="col s12" id="form">
+      <div id="calculator">
+        <div class="row">
+          <form class="col s12" id="form">
 
-          <section id="patient-info" class="section">
-            <div class="row">
-              <div class="input-field col s12 l6">
-                <input id="weight" type="number" name="weight" class="validate" required>
-                <label for="weight" class="black-text">წონა (კგ)</label>
-                <span class="helper-text" data-error="wrong" data-success="right">წონა მიუთითეთ
-                  <strong>კილოგრამებში</strong>. მაგ.
-                  <strong>76</strong></span>
+            <section id="patient-info" class="section">
+              <div class="row">
+                <div class="input-field col s12 l6">
+                  <input id="weight" type="number" name="weight" class="validate" required>
+                  <label for="weight" class="black-text">წონა (კგ)</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">წონა მიუთითეთ
+                    <strong>კილოგრამებში</strong>. მაგ.
+                    <strong>76</strong></span>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="input-field col s12 l6">
-                <input id="height" type="number" name="height" class="validate" required>
-                <label for="height" class="black-text">სიმაღლე (სმ)</label>
-                <span class="helper-text" data-error="wrong" data-success="right">სიმაღლე მიუთითეთ
-                  <strong>სანტიმეტრებში</strong>. მაგ.
-                  <strong>170</strong></span>
+              <div class="row">
+                <div class="input-field col s12 l6">
+                  <input id="height" type="number" name="height" class="validate" required>
+                  <label for="height" class="black-text">სიმაღლე (სმ)</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">სიმაღლე მიუთითეთ
+                    <strong>სანტიმეტრებში</strong>. მაგ.
+                    <strong>170</strong></span>
+                </div>
               </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section id="weight-loss" class="section">
+              <p>წონის არაგეგმიური კლება ბოლო 3-5 თვის მანძილზე</p>
+
+              <p>
+                <label>
+                  <input class="with-gap" name="weightLoss" value="0" type="radio" checked />
+                  <span class="black-text">არ არის</span>
+                </label>
+              </p>
+
+              <p>
+                <label>
+                  <input class="with-gap" name="weightLoss" value="1" type="radio" />
+                  <span class="black-text">ნაკლებია 5%-ზე</span>
+                </label>
+              </p>
+
+              <p>
+                <label>
+                  <input class="with-gap" name="weightLoss" value="2" type="radio" />
+                  <span class="black-text">5 - 10%</span>
+                </label>
+              </p>
+
+              <p>
+                <label>
+                  <input class="with-gap" name="weightLoss" value="3" type="radio" />
+                  <span class="black-text">მეტია 10%-ზე</span>
+                </label>
+              </p>
+
+            </section>
+
+            <div class="divider"></div>
+
+            <section id="critical-status" class="section">
+              <p>
+                <label>
+                  <input type="checkbox" class="filled-in" name="critical" />
+                  <span class="black-text">პაციენტი კრიტიკულად მძიმეა, არ მიუღია საკვები ადეკვატურად 5-ზე მეტი დღის
+                    განმავლობაში, აქვს
+                    დისფაგია.</span>
+                </label>
+              </p>
+            </section>
+
+            <div class="row center">
+              <button class="btn waves-effect waves-light btn-large" type="submit" name="action">გამოთვალე</button>
             </div>
+          </form>
+        </div>
 
-            <p>პაციენტის სქესი</p>
-
-            <p>
-              <label>
-                <input class="with-gap" name="gender" value="female" type="radio" checked />
-                <span class="black-text">ქალი</span>
-              </label>
-            </p>
-
-            <p>
-              <label>
-                <input class="with-gap" name="gender" value="male" type="radio" />
-                <span class="black-text">მამაკაცი</span>
-              </label>
-            </p>
-          </section>
-
-          <div class="divider"></div>
-
-          <section id="weight-loss" class="section">
-            <p>წონის არაგეგმიური კლება ბოლო 3-5 თვის მანძილზე</p>
-
-            <p>
-              <label>
-                <input class="with-gap" name="weightLoss" value="0" type="radio" checked />
-                <span class="black-text">არ არის</span>
-              </label>
-            </p>
-
-            <p>
-              <label>
-                <input class="with-gap" name="weightLoss" value="1" type="radio" />
-                <span class="black-text">ნაკლებია 5%-ზე</span>
-              </label>
-            </p>
-
-            <p>
-              <label>
-                <input class="with-gap" name="weightLoss" value="2" type="radio" />
-                <span class="black-text">5 - 10%</span>
-              </label>
-            </p>
-
-            <p>
-              <label>
-                <input class="with-gap" name="weightLoss" value="3" type="radio" />
-                <span class="black-text">მეტია 10%-ზე</span>
-              </label>
-            </p>
-
-          </section>
-
-          <div class="divider"></div>
-
-          <section id="critical-status" class="section">
-            <p>
-              <label>
-                <input type="checkbox" class="filled-in" name="critical" />
-                <span class="black-text">პაციენტი კრიტიკულად მძიმეა, არ მიუღია საკვები ადეკვატურად 5-ზე მეტი დღის
-                  განმავლობაში, აქვს
-                  დისფაგია.</span>
-              </label>
-            </p>
-          </section>
-
-          <div class="row center">
-            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">გამოთვალე</button>
-          </div>
-        </form>
       </div>
+
+      <div id="results"></div>
 
     </div>
 
