@@ -49,11 +49,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     </tbody>
                 </table>
             </div>
+
+            <div class="divider"></div>
+
             <div class="row">
                 <h5>რეკომენდაცია</h5>
 
                 <p class="recomendation">შეაფასეთ ყოველ კვირას რუტინულად.</p>
             </div>
+
+            <div class="divider"></div>
+
             <div class="row">
                 <h5>პაციენტის მონაცემები</h5>
                 <table class="striped">
@@ -112,11 +118,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     </tbody>
                 </table>
             </div>
+
+            <div class="divider"></div>
+
             <div class="row">
                 <h5>რეკომენდაცია</h5>
 
                 <p class="recomendation">შეაფასეთ ყოველ კვირას რუტინულად.</p>
             </div>
+
+            <div class="divider"></div>
+
             <div class="row">
                 <h5>პაციენტის მონაცემები</h5>
                 <table class="striped">
