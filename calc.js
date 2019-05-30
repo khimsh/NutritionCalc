@@ -32,6 +32,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p class="center kkal">${TEE}<span>კკალ</span></p>
             </div>
             <div class="row">
+                <table class="striped">
+                    <tbody>
+                        <tr>
+                            <th>პროტეინები</th>
+                            <td>${proteins}გ</td>
+                        </tr>
+                        <tr>
+                            <th>ნახშირწყლები</th>
+                            <td>${carbs}გ</td>
+                        </tr>
+                        <tr>
+                            <th>ცხიმები</th>
+                            <td>${fats}გ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
                 <h5>რეკომენდაცია</h5>
 
                 <p class="recomendation">შეაფასეთ ყოველ კვირას რუტინულად.</p>
@@ -75,6 +93,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h5>დღიური კალორია</h5>
 
                 <p class="center kkal">${REE}<span>კკალ</span></p>
+            </div>
+            <div class="row">
+                <table class="striped">
+                    <tbody>
+                        <tr>
+                            <th>პროტეინები</th>
+                            <td>${proteins}გ</td>
+                        </tr>
+                        <tr>
+                            <th>ნახშირწყლები</th>
+                            <td>${carbs}გ</td>
+                        </tr>
+                        <tr>
+                            <th>ცხიმები</th>
+                            <td>${fats}გ</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="row">
                 <h5>რეკომენდაცია</h5>
