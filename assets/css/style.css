@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Arial GEO';
+  src: url('../fonts/ArialGEO.woff2') format('woff2'),
+       url('../fonts/ArialGEO.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 html {
   font-family: "Arial GEO", sans-serif;
 }

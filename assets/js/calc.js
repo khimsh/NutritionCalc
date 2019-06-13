@@ -21,9 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Calculate Calories
         if (totalScore <= 1) {
-            // console.log('Score is 0 or 1');
             let [TEE, proteins, fats, carbs] = caseOne(weight);
-            // console.log(TEE, proteins, fats, carbs);
              // Append results to the home screen
             let results = `
             <div class="row">
