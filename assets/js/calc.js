@@ -14,16 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
         let totalScore = scoreCalculator(bmi, weightLoss, criticalStatus);
 
         // Delete before deploying
-        console.log(`BMI: ${bmi}`);
-        console.log(`Weightloss: ${weightLoss}`);
-        console.log(`Critical Status: ${criticalStatus}`);
-        console.log(`Score: ${totalScore}`);
+        // console.log(`BMI: ${bmi}`);
+        // console.log(`Weightloss: ${weightLoss}`);
+        // console.log(`Critical Status: ${criticalStatus}`);
+        // console.log(`Score: ${totalScore}`);
 
         // Calculate Calories
         if (totalScore <= 1) {
-            console.log('Score is 0 or 1');
+            // console.log('Score is 0 or 1');
             let [TEE, proteins, fats, carbs] = caseOne(weight);
-            console.log(TEE, proteins, fats, carbs);
+            // console.log(TEE, proteins, fats, carbs);
              // Append results to the home screen
             let results = `
             <div class="row">
@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             updateUI(results);
         } else if (totalScore >= 2) {
-            console.log('Score is 2 or more');
+            // console.log('Score is 2 or more');
             let [REE, proteins, fats, carbs] = caseTwo(weight, bmi)
-            console.log(REE, proteins, fats, carbs);
+            // console.log(REE, proteins, fats, carbs);
 
             let results = `
             <div class="row">
@@ -219,8 +219,7 @@ function scoreCalculator(bmi, weightLoss, criticalStatus) {
             score += 2;
             break;
         default:
-            console.log('Something went wrong with weightLoss');
-            console.log(weightLoss);
+            break;
     }
 
     // score gathered from critical condition

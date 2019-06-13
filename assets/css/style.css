@@ -1,0 +1,27 @@
+html {
+  font-family: "Arial GEO", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+.helper-text strong {
+  font-weight: 700;
+}
+
+.kkal {
+  font-size: 3rem;
+}
+
+.kkal span {
+  font-size: 1.5rem;
+}
+
+.recomendation {
+  font-size: 1rem;
+}
+
+.brand-logo {
+  font-size: 1.8rem !important;
+}
