@@ -13,12 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let bmi = calculateBMI(weight, height);
         let totalScore = scoreCalculator(bmi, weightLoss, criticalStatus);
 
-        // Delete before deploying
-        // console.log(`BMI: ${bmi}`);
-        // console.log(`Weightloss: ${weightLoss}`);
-        // console.log(`Critical Status: ${criticalStatus}`);
-        // console.log(`Score: ${totalScore}`);
-
         // Calculate Calories
         if (totalScore <= 1) {
             let [TEE, proteins, fats, carbs] = caseOne(weight);
@@ -88,9 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             updateUI(results);
         } else if (totalScore >= 2) {
-            // console.log('Score is 2 or more');
             let [REE, proteins, fats, carbs] = caseTwo(weight, bmi)
-            // console.log(REE, proteins, fats, carbs);
 
             let results = `
             <div class="row">

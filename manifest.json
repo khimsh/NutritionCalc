@@ -1,0 +1,21 @@
+{
+  "short_name": "C-Meter",
+  "name": "კალორიმეტრი",
+  "icons": [
+    {
+      "src": "/images/logo-192x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logo-512x.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#fff",
+  "display": "standalone",
+  "description": "ინსულტიანი პაციენტებისთვის საჭირო კალორიების დღიური ნორმის მთვლელი.",
+  "theme_color": "#4DB6AC"
+}
